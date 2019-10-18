@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>typescript学习(3) 类 | xiaOz&#39;s blog</title>
+  
+  <meta name="keywords" content="前端">
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gyxiaoz/image-hosting@master/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>xiaOz's blog</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/archives/"
+            
+            
+            id="archives">
+            <i class='fas fa-archive fa-fw'></i>&nbsp;归档
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/"
+            
+            
+            id="categories">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          xiaOz's blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于小站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/05/11/learn-ts3/">
+        typescript学习(3) 类
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>zzx</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-11</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/学习笔记/typescript/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>学习笔记&nbsp;/&nbsp;typescript</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Animal &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  move(distance: <span class="built_in">number</span> = <span class="number">0</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> moved <span class="subst">$&#123;distance&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>面向对象模式，基于类的程序设计中一种最基本的模式是允许使用继承来扩展现有的类</p>
+<a id="more"></a>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Animal &#123;</span><br><span class="line">  name: <span class="built_in">string</span></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">  move(distance: <span class="built_in">number</span> = <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> moved <span class="subst">$&#123;distance&#125;</span>m.`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Snake <span class="keyword">extends</span> Animal &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name)</span><br><span class="line">  &#125;</span><br><span class="line">  move(distance: <span class="built_in">number</span> = <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Slithering...'</span>)</span><br><span class="line">    <span class="keyword">super</span>.move(distance)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Horse <span class="keyword">extends</span> Animal &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name)</span><br><span class="line">  &#125;</span><br><span class="line">  move(distance: <span class="built_in">number</span> = <span class="number">45</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Galloping...'</span>)</span><br><span class="line">    <span class="keyword">super</span>.move(distance)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sam = <span class="keyword">new</span> Snake(<span class="string">'Sammy'</span>)</span><br><span class="line"><span class="keyword">let</span> tom: Animal = <span class="keyword">new</span> Horse(<span class="string">'Tommy'</span>)</span><br><span class="line"></span><br><span class="line">sam.move()</span><br><span class="line">tom.move(<span class="number">34</span>)</span><br></pre></td></tr></table></figure>
+<p>派生类包含了一个构造函数，它 必须调用 <code>super()</code>，它会执行基类的构造函数。 而且，在构造函数里访问 this 的属性之前，我们 一定要调用 <code>super()</code>。 这个是 TypeScript 强制执行的一条重要规则。</p>
+<p>这个例子演示了如何在子类里可以重写父类的方法。Snake类和 Horse 类都创建了 move 方法，它们重写了从 Animal 继承来的 move 方法，使得 move 方法根据不同的类而具有不同的功能。注意，即使 tom 被声明为 Animal 类型，但因为它的值是 Horse，调用 <code>tom.move(34)</code> 时，它会调用 Horse 里重写的方法。子类方法里使用super调用父类方法</p>
+<h2 id="公共，私有与受保护的修饰符"><a href="#公共，私有与受保护的修饰符" class="headerlink" title="公共，私有与受保护的修饰符"></a>公共，私有与受保护的修饰符</h2><h3 id="public"><a href="#public" class="headerlink" title="public"></a>public</h3><p>TypeScript 里，成员都默认为 <code>public</code></p>
+<h3 id="private"><a href="#private" class="headerlink" title="private"></a>private</h3><p>当成员被标记成 <code>private</code> 时，它就不能在声明它的类的外部访问</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Animal &#123;</span><br><span class="line">  <span class="keyword">private</span> name: <span class="built_in">string</span></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123; </span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Animal(<span class="string">'Cat'</span>).name <span class="comment">// 错误: 'name' 是私有的.</span></span><br></pre></td></tr></table></figure>
+<p>如果其中一个类型里包含一个 <code>private</code> 成员，那么只有当另外一个类型中也存在这样一个 <code>private</code> 成员，并且它们都是来自同一处声明时，我们才认为这两个类型是兼容的。 对于 <code>protected</code> 成员也使用这个规则</p>
+<h3 id="protected"><a href="#protected" class="headerlink" title="protected"></a>protected</h3><p><code>protected</code> 修饰符与 <code>private</code> 修饰符的行为很相似，但有一点不同， <code>protected</code> 成员在派生类中仍然可以访问</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">  <span class="keyword">protected</span> name: <span class="built_in">string</span></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Employee <span class="keyword">extends</span> Person &#123;</span><br><span class="line">  <span class="keyword">private</span> department: <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, department: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name)</span><br><span class="line">    <span class="keyword">this</span>.department = department</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  getElevatorPitch() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Hello, my name is <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> and I work in <span class="subst">$&#123;<span class="keyword">this</span>.department&#125;</span>.`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> howard = <span class="keyword">new</span> Employee(<span class="string">'Howard'</span>, <span class="string">'Sales'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(howard.getElevatorPitch())</span><br><span class="line"><span class="built_in">console</span>.log(howard.name) <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<p>注意，我们不能在 <code>Person</code> 类外使用 <code>name</code>，但是我们仍然可以通过 <code>Employee</code> 类的实例方法访问，因为 <code>Employee</code> 是由 <code>Person</code> 派生而来的。</p>
+<p>构造函数也可以被标记成 <code>protected</code>, 这意味着这个类不能在包含它的类外被实例化，但是能被继承。比如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">  <span class="keyword">protected</span> name: <span class="built_in">string</span></span><br><span class="line">  <span class="keyword">protected</span> <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Employee 能够继承 Person</span></span><br><span class="line"><span class="keyword">class</span> Employee <span class="keyword">extends</span> Person &#123;</span><br><span class="line">  <span class="keyword">private</span> department: <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, department: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name)</span><br><span class="line">    <span class="keyword">this</span>.department = department</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> getElevatorPitch() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`Hello, my name is <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> and I work in <span class="subst">$&#123;<span class="keyword">this</span>.department&#125;</span>.`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> howard = <span class="keyword">new</span> Employee(<span class="string">'Howard'</span>, <span class="string">'Sales'</span>)</span><br><span class="line"><span class="keyword">let</span> john = <span class="keyword">new</span> Person(<span class="string">'John'</span>) <span class="comment">// 错误: 'Person' 的构造函数是被保护的.</span></span><br></pre></td></tr></table></figure>
+<h2 id="readonly修饰符"><a href="#readonly修饰符" class="headerlink" title="readonly修饰符"></a>readonly修饰符</h2><p>使用 <code>readonly</code> 关键字将属性设置为只读的。 只读属性必须在声明时或构造函数里被初始化</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">  readonly name: <span class="built_in">string</span></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> john = <span class="keyword">new</span> Person(<span class="string">'John'</span>)</span><br><span class="line">john.name = <span class="string">'peter'</span> <span class="comment">// error: Cannot assign to 'name' because it is a read-only property</span></span><br></pre></td></tr></table></figure>
+<h2 id="参数属性"><a href="#参数属性" class="headerlink" title="参数属性"></a>参数属性</h2><p>在上面的例子中，我们必须在 <code>Person</code> 类里定义一个只读成员 <code>name</code> 和一个参数为 <code>name</code> 的构造函数，并且立刻将 <code>name</code> 的值赋给 <code>this.name</code>，这种情况经常会遇到。 参数属性可以方便地让我们在一个地方定义并初始化一个成员。 下面的例子是对之前 <code>Person</code> 类的修改版，使用了参数属性</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">readonly name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就是把声明和赋值合并至一处，<code>public</code>,<code>private</code>,<code>protected</code> 也是一样的，但是不建议使用，不清晰</p>
+<h2 id="存取器"><a href="#存取器" class="headerlink" title="存取器"></a>存取器</h2><p>通过 <code>getters/setters</code> 来截取对对象成员的访问。 它能帮助你有效的控制对对象成员的访问</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Human &#123;</span><br><span class="line">  <span class="keyword">private</span> _name!: <span class="built_in">string</span>; <span class="comment">// 不加感叹号会报错：属性“_name”没有初始化表达式，且未在构造函数中明确赋值</span></span><br><span class="line">  <span class="keyword">get</span> name(): <span class="built_in">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">set</span> name(newName: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>._name = <span class="string">`newName:<span class="subst">$&#123;newName&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mike = <span class="keyword">new</span> Human();</span><br><span class="line">mike.name = <span class="string">'mike'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="静态属性"><a href="#静态属性" class="headerlink" title="静态属性"></a>静态属性</h2><p>静态属性存在于类本身上面而不是类的实例上</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Human &#123;</span><br><span class="line">  <span class="keyword">static</span> age: <span class="built_in">number</span> = <span class="number">15</span>;</span><br><span class="line">  show() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(Human.age);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mike = <span class="keyword">new</span> Human();</span><br><span class="line">mike.show();</span><br></pre></td></tr></table></figure>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>抽象类做为其它派生类的基类使用。 它们一般不会直接被实例化。不同于接口，抽象类可以包含成员的实现细节。 <code>abstract</code> 关键字是用于定义抽象类和在抽象类内部定义抽象方法</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Animal1 &#123;</span><br><span class="line">  <span class="keyword">abstract</span> makeSound(): <span class="built_in">void</span>;</span><br><span class="line">  move(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'moving'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Bird <span class="keyword">extends</span> Animal1 &#123;</span><br><span class="line">  makeSound() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'jiujiujiu'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bird: Bird = <span class="keyword">new</span> Bird();</span><br><span class="line">bird.makeSound();</span><br><span class="line">bird.move();</span><br></pre></td></tr></table></figure>
+<p>抽象类中的抽象方法不包含具体实现并且必须在派生类中实现。 抽象方法的语法与接口方法相似。两者都是定义方法签名但不包含方法体。<br>然而，抽象方法必须包含 <code>abstract</code> 关键字并且可以包含访问修饰符，除 <code>private</code>，因为子类需要实现抽象方法</p>
+<h2 id="高级技巧"><a href="#高级技巧" class="headerlink" title="高级技巧"></a>高级技巧</h2><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>当你在 TypeScript 里声明了一个类的时候，实际上同时声明了很多东西。首先就是类的 <strong>实例</strong> 的类型。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Greeter &#123;</span><br><span class="line">  <span class="keyword">static</span> standardGreeting = <span class="string">'Hello, there'</span></span><br><span class="line">  greeting: <span class="built_in">string</span></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">message: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.greeting = message</span><br><span class="line">  &#125;</span><br><span class="line">  greet() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello, '</span> + <span class="keyword">this</span>.greeting</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> greeter: Greeter</span><br><span class="line">greeter = <span class="keyword">new</span> Greeter(<span class="string">'world'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(greeter.greet())</span><br></pre></td></tr></table></figure>
+<p>这里，我们写了 <code>let greeter: Greeter</code>，意思是 <code>Greeter</code> 类的实例的类型是 <code>Greeter</code>。 这对于用过其它面向对象语言的程序员来讲已经是老习惯了。</p>
+<p>我们也创建了一个叫做 <strong>构造函数</strong> 的值 。 这个函数会在我们使用 <code>new</code> 创建类实例的时候被调用。 下面我们来看看，上面的代码被编译成JavaScript后是什么样子的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Greeter = <span class="comment">/** @class */</span> (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Greeter</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.greeting = message;</span><br><span class="line">  &#125;</span><br><span class="line">  Greeter.prototype.greet = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello, '</span> + <span class="keyword">this</span>.greeting;</span><br><span class="line">  &#125;;</span><br><span class="line">  Greeter.standardGreeting = <span class="string">'Hello, there'</span>;</span><br><span class="line">  <span class="keyword">return</span> Greeter;</span><br><span class="line">&#125;());</span><br><span class="line"><span class="keyword">var</span> greeter;</span><br><span class="line">greeter = <span class="keyword">new</span> Greeter(<span class="string">'world'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(greeter.greet());</span><br></pre></td></tr></table></figure>
+<p>上面的代码里，<code>var Greeter</code> 将被构造函数赋值。 当我们调用 <code>new</code> 并执行了这个函数后，便会得到一个类的实例。这个构造函数也包含了类的所有静态属性。 换个角度说，我们可以认为类具有 <strong>实例部分</strong> 与 <strong>静态部分</strong> 这两个部分。</p>
+<p>让我们稍微改写一下这个例子，看看它们之间的区别：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Greeter &#123;</span><br><span class="line">  <span class="keyword">static</span> standardGreeting = <span class="string">'Hello, there'</span></span><br><span class="line">  </span><br><span class="line">  greeting: <span class="built_in">string</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">message?: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.greeting = message</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  greet() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.greeting) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'Hello, '</span> + <span class="keyword">this</span>.greeting</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> Greeter.standardGreeting</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> greeter: Greeter</span><br><span class="line">greeter = <span class="keyword">new</span> Greeter()</span><br><span class="line"><span class="built_in">console</span>.log(greeter.greet())</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> greeterMaker: <span class="keyword">typeof</span> Greeter = Greeter</span><br><span class="line">greeterMaker.standardGreeting = <span class="string">'Hey there'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> greeter2: Greeter = <span class="keyword">new</span> greeterMaker()</span><br><span class="line"><span class="built_in">console</span>.log(greeter2.greet())</span><br></pre></td></tr></table></figure>
+<p>这个例子里， <code>greeter1</code> 与之前看到的一样。 我们实例化 Greeter类，并使用这个对象。 与我们之前看到的一样。</p>
+<p>再之后，我们直接使用类。 我们创建了一个叫做 <code>greeterMaker</code> 的变量。这个变量保存了这个类或者说保存了类构造函数。 然后我们使用 <code>typeof Greeter</code>，意思是取 <code>Greeter</code> 类的类型，而不是实例的类型。或者更确切的说，”告诉我 <code>Greeter</code> 标识符的类型”，也就是构造函数的类型。 这个类型包含了类的所有静态成员和构造函数。 之后，就和前面一样，我们在 <code>greeterMaker</code> 上使用 <code>new</code>，创建 <code>Greeter</code> 的实例。</p>
+<h3 id="把类当做接口使用"><a href="#把类当做接口使用" class="headerlink" title="把类当做接口使用"></a>把类当做接口使用</h3><p>如上一节里所讲的，类定义会创建两个东西：类的实例类型和一个构造函数。 因为类可以创建出类型，所以你能够在允许使用接口的地方使用类。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Point &#123;</span><br><span class="line">  x: <span class="built_in">number</span></span><br><span class="line">  y: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Point3d <span class="keyword">extends</span> Point &#123;</span><br><span class="line">  z: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> point3d: Point3d = &#123;x: <span class="number">1</span>, y: <span class="number">2</span>, z: <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-06T14:15:25+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年9月6日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>typescript</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.xiaoz.site/2019/05/11/learn-ts3/&title=typescript学习(3) 类 | xiaOz's blog&summary=简单介绍123456789class Animal &#123;  name: string;  constructor(name: string) &#123;    this.name = name;  &#125;  move(distance: number = 0): void &#123;    console.log(`$&#123;this.name&#125; moved $&#123;distance&#125;`);  &#125;&#125;
+继承面向对象模式，基于类的程序设计中一种最基本的模式是允许使用继承来扩展现有的类"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.xiaoz.site/2019/05/11/learn-ts3/&title=typescript学习(3) 类 | xiaOz's blog&summary=简单介绍123456789class Animal &#123;  name: string;  constructor(name: string) &#123;    this.name = name;  &#125;  move(distance: number = 0): void &#123;    console.log(`$&#123;this.name&#125; moved $&#123;distance&#125;`);  &#125;&#125;
+继承面向对象模式，基于类的程序设计中一种最基本的模式是允许使用继承来扩展现有的类"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.xiaoz.site/2019/05/11/learn-ts3/&title=typescript学习(3) 类 | xiaOz's blog&summary=简单介绍123456789class Animal &#123;  name: string;  constructor(name: string) &#123;    this.name = name;  &#125;  move(distance: number = 0): void &#123;    console.log(`$&#123;this.name&#125; moved $&#123;distance&#125;`);  &#125;&#125;
+继承面向对象模式，基于类的程序设计中一种最基本的模式是允许使用继承来扩展现有的类"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2019/05/12/learn-ts4/" rel="prev" title="typescript学习(4) 函数">
+                                  
+                                      typescript学习(4) 函数
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/typescript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>typescript</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/05/09/learn-ts2/" rel="prev" title="typescript学习(2) 接口">
+                                    
+                                        typescript学习(2) 接口
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/typescript/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>typescript</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'typescript学习(3) 类',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://avatars0.githubusercontent.com/u/15631279?s=460&v=4'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:420628272@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/GYxiaOZ"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=65956823"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单介绍"><span class="toc-text">简单介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公共，私有与受保护的修饰符"><span class="toc-text">公共，私有与受保护的修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#public"><span class="toc-text">public</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#private"><span class="toc-text">private</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#protected"><span class="toc-text">protected</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#readonly修饰符"><span class="toc-text">readonly修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数属性"><span class="toc-text">参数属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存取器"><span class="toc-text">存取器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态属性"><span class="toc-text">静态属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类"><span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级技巧"><span class="toc-text">高级技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数"><span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把类当做接口使用"><span class="toc-text">把类当做接口使用</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+          
+          id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/about/" href="/about/"
+          
+            rel="nofollow"
+          
+          
+          id="about">
+          
+            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+          
+          关于小站
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/css/" href="/categories/css/"><div class='name'>css</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/learn/" href="/categories/learn/"><div class='name'>learn</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/work/" href="/categories/work/"><div class='name'>work</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/学习笔记/" href="/categories/学习笔记/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/学习笔记/typescript/" href="/categories/学习笔记/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/文档/" href="/categories/文档/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/tags/tips/" style="font-size: 19px; color: #777">tips</a> <a href="/tags/typescript/" style="font-size: 24px; color: #555">typescript</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/user/home?id=65956823"
+    title="https://music.163.com/#/user/home?id=65956823">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#70a1ff"
+    
+    
+    data-mode="circulation"
+    data-server="netease"
+    data-type="playlist"
+    data-id="68981709"
+    data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:420628272@qq.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/GYxiaOZ"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=65956823"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "b47f7f87ab36b5710ada",
+      clientSecret: "6505e07454b9a8a14369a514bf78ea33c69dba95",
+      repo: "zzx-blog-source",
+      owner: "GYxiaOZ",
+      admin: "GYxiaOZ",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  <script type="text/javascript"
+      color="100,100,100" opacity='0.7' zIndex="-2" count="250" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+</html>
