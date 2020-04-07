@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <title>typescript学习(5) 泛型 | xiaOz&#39;s blog</title>
   
@@ -12,14 +12,14 @@
 
   
 
-  <meta name="HandheldFriendly" content="True">
+  <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
   
@@ -27,11 +27,13 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gyxiaoz/image-hosting@master/favicon.ico">
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/gyxiaoz/image-hosting@master/favicon.ico">
   
 
   
-    <link rel="stylesheet" href="/style.css">
+    
+<link rel="stylesheet" href="/style.css">
+
   
 
   <script>
@@ -42,7 +44,7 @@
 
   
   
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   
@@ -273,7 +275,7 @@
       
         <i class="fas fa-user" aria-hidden="true"></i>
       
-      <p>zzx</p>
+      <p>xiaOz</p>
     </a>
   </div>
 
@@ -294,7 +296,7 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/学习笔记/typescript/' rel="nofollow">
+    <a href='/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
       <p>学习笔记&nbsp;/&nbsp;typescript</p>
     </a>
@@ -339,32 +341,44 @@
           <p>泛型为定义提供了重用性，在创建大型系统时为你提供了十分灵活的功能</p>
 <h2 id="基础实例"><a href="#基础实例" class="headerlink" title="基础实例"></a>基础实例</h2><p>创建一个 <code>identity</code> 函数，它会返回任何传入值，如果不用泛型</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>(<span class="params">arg: <span class="built_in">any</span></span>): <span class="title">any</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>但是使用 <code>any</code> 会导致 ts 不提供类型检查，我们需要知道传入类型和返回类型是相同的，所以需要使用泛型，泛型是一种 <em>类型变量</em> ，它值用于表示类型而不是值</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
+
 <p>我们给 <code>identity</code> 添加了类型变量 <code>T</code>。 <code>T</code> 帮助我们捕获用户传入的类型（比如：<code>number</code>），之后我们就可以使用这个类型。 之后我们再次使用了 <code>T</code> 当做返回值类型。现在我们可以知道参数类型与返回值类型是相同的了。这允许我们跟踪函数里使用的类型的信息。</p>
 <p>定义了泛型之后，有两种方法使用</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> output = identity&lt;<span class="built_in">string</span>&gt;(<span class="string">'myString'</span>);</span><br><span class="line"><span class="keyword">let</span> output1 = identity(<span class="string">'myString'</span>);</span><br></pre></td></tr></table></figure>
+
 <p>第一种明确制定了 <code>T</code> 是 <code>string</code> 类型，并作为一个参数传给函数<br>第二种利用了 <em>类型推论</em> ，ts 会根据参数自动确定 T 的类型<br>一般同第二种就好了，当 ts 无法推断时，用第一种</p>
 <h2 id="泛型变量"><a href="#泛型变量" class="headerlink" title="泛型变量"></a>泛型变量</h2><p>泛型变量可以当做类型的一部分使用</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loggingIdentity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg.length); <span class="comment">// error: Property 'length' does not exist on type 'T'.</span></span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>类型变量 <code>T</code> 代表的是任意类型，所以使用这个函数的人可能传入的是个数字，而数字是没有 <code>.length</code> 属性的，ts 会报错</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loggingIdentity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T[]</span>): <span class="title">T</span>[] </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg.length);</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>用以上方式写，参数 <code>arg</code> 是一个数组，所以有 length 属性，此时 <code>T</code> 表示数组元素的类型</p>
 <h2 id="泛型类型"><a href="#泛型类型" class="headerlink" title="泛型类型"></a>泛型类型</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> myIdentity: &lt;U&gt;<span class="function">(<span class="params">arg: U</span>) =&gt;</span> U = identity;</span><br></pre></td></tr></table></figure>
+
 <p>可以使用不同的泛型参数名，只要在数量上和使用方式上能对应上就可以。</p>
 <h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> GenericIdentityFn &#123;</span><br><span class="line">  &lt;T&gt;(arg: T): T;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 编辑器会建议修改为类型别名的写法</span></span><br><span class="line"><span class="comment">// type GenericIdentityFn = &lt;T&gt;(arg: T) =&gt; T</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myIdentity: GenericIdentityFn = identity;</span><br></pre></td></tr></table></figure>
+
 <p>我们还可以把泛型参数当作整个接口的一个参数。 这样我们就能清楚的知道使用的具体是哪个泛型类型（比如： <code>Dictionary&lt;string&gt;</code> 而不只是 <code>Dictionary</code> ）。这样接口里的其它成员也能知道这个参数的类型了</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> GenericIdentityFn&lt;T&gt; &#123;</span><br><span class="line">  (arg: T): T;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 编辑器会建议修改为：</span></span><br><span class="line"><span class="comment">// type GenericIdentityFn&lt;T&gt; = (arg: T) =&gt; T;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myIdentity: GenericIdentityFn&lt;<span class="built_in">number</span>&gt; = identity;</span><br></pre></td></tr></table></figure>
+
 <p>注意，我们的示例做了少许改动。 不再描述泛型函数，而是把非泛型函数签名作为泛型类型一部分。 当我们使用 <code>GenericIdentityFn</code> 的时候，还得传入一个类型参数来指定泛型类型（这里是： <code>number</code> ），锁定了之后代码里使用的类型。对于描述哪部分类型属于泛型部分来说，理解何时把参数放在调用签名里和何时放在接口上是很有帮助的</p>
 <h2 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h2><p>泛型类看上去与泛型接口差不多。 泛型类使用 <code>&lt;&gt;</code> 括起泛型类型，跟在类名后面</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> GenericNumber&lt;T&gt; &#123;</span><br><span class="line">  zeroValue: T;</span><br><span class="line">  add: <span class="function">(<span class="params">x: T, y: T</span>) =&gt;</span> T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myGenericNumber = <span class="keyword">new</span> GenericNumber&lt;<span class="built_in">number</span>&gt;();</span><br><span class="line">myGenericNumber.zeroValue = <span class="number">0</span>;</span><br><span class="line">myGenericNumber.add = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>与接口一样，直接把泛型类型放在类后面，可以帮助我们确认类的所有属性都在使用相同的类型。</p>
 <p>类有两部分：静态部分和实例部分。 泛型类指的是实例部分的类型，所以类的静态属性不能使用这个泛型类型</p>
 <h2 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loggingIdentity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg.length); <span class="comment">// error: Property 'length' does not exist on type 'T'</span></span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>要修正上面的例子中的错误，可以使用到泛型约束</p>
 <p>我们定义一个接口来描述约束条件，创建一个包含 <code>.length</code> 属性的接口，使用这个接口和 <code>extends</code> 关键字来实现约束</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Lengthwise &#123;</span><br><span class="line">  length: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loggingIdentity</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">Lengthwise</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg.length); <span class="comment">// OK</span></span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loggingIdentity(<span class="number">3</span>); <span class="comment">// Error</span></span><br><span class="line">loggingIdentity(&#123; length: <span class="number">10</span>, value: <span class="number">3</span> &#125;); <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+
 <p>我们需要传入符合约束类型的值，必须包含必须的属性</p>
 <h2 id="在泛型约束中使用类型参数"><a href="#在泛型约束中使用类型参数" class="headerlink" title="在泛型约束中使用类型参数"></a>在泛型约束中使用类型参数</h2><p>你可以声明一个类型参数，且它被另一个类型参数所约束。 比如，现在我们想要用属性名从对象里获取这个属性。 并且我们想要确保这个属性存在于对象 <code>obj</code> 上，因此我们需要在这两个类型之间使用约束。</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getProperty</span>&lt;<span class="title">T</span>, <span class="title">K</span> <span class="title">extends</span> <span class="title">keyof</span> <span class="title">T</span>&gt;(<span class="params">obj: T, key: K</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> obj[key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = &#123; a: <span class="number">1</span>, b: <span class="number">2</span>, c: <span class="number">3</span>, d: <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">getProperty(x, <span class="string">'a'</span>); <span class="comment">// okay</span></span><br><span class="line">getProperty(x, <span class="string">'m'</span>); <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
@@ -407,6 +421,7 @@
           href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.xiaoz.site/2019/05/16/learn-ts5/&title=typescript学习(5) 泛型 | xiaOz's blog&summary=泛型为定义提供了重用性，在创建大型系统时为你提供了十分灵活的功能
 基础实例创建一个 identity 函数，它会返回任何传入值，如果不用泛型
 123function identity(arg: any): any &#123;  return arg;&#125;
+
 但是使用 any 会导致 ts 不提供类型检查，我们需要知道传入类型和返回类型是相同的，所以需要使用泛型，泛型是一种 类型变量 ，它值用于表示类型而不是值
 123function identity&lt;T&gt;(arg: T): T &#123;  return arg;&#125;"
           
@@ -423,6 +438,7 @@
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.xiaoz.site/2019/05/16/learn-ts5/&title=typescript学习(5) 泛型 | xiaOz's blog&summary=泛型为定义提供了重用性，在创建大型系统时为你提供了十分灵活的功能
 基础实例创建一个 identity 函数，它会返回任何传入值，如果不用泛型
 123function identity(arg: any): any &#123;  return arg;&#125;
+
 但是使用 any 会导致 ts 不提供类型检查，我们需要知道传入类型和返回类型是相同的，所以需要使用泛型，泛型是一种 类型变量 ，它值用于表示类型而不是值
 123function identity&lt;T&gt;(arg: T): T &#123;  return arg;&#125;"
           
@@ -439,6 +455,7 @@
           href="http://service.weibo.com/share/share.php?url=https://blog.xiaoz.site/2019/05/16/learn-ts5/&title=typescript学习(5) 泛型 | xiaOz's blog&summary=泛型为定义提供了重用性，在创建大型系统时为你提供了十分灵活的功能
 基础实例创建一个 identity 函数，它会返回任何传入值，如果不用泛型
 123function identity(arg: any): any &#123;  return arg;&#125;
+
 但是使用 any 会导致 ts 不提供类型检查，我们需要知道传入类型和返回类型是相同的，所以需要使用泛型，泛型是一种 类型变量 ，它值用于表示类型而不是值
 123function identity&lt;T&gt;(arg: T): T &#123;  return arg;&#125;"
           
@@ -711,11 +728,11 @@
         
           <li><a class="flat-box" title="/categories/work/" href="/categories/work/"><div class='name'>work</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/学习笔记/" href="/categories/学习笔记/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box child" title="/categories/学习笔记/typescript/" href="/categories/学习笔记/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/文档/" href="/categories/文档/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -847,7 +864,7 @@
     </div>
   
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
@@ -946,10 +963,14 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
 
 
 

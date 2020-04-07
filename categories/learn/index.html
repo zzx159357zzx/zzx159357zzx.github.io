@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   <title>Category: learn | xiaOz&#39;s blog</title>
   
@@ -12,14 +12,14 @@
 
   
 
-  <meta name="HandheldFriendly" content="True">
+  <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- meta -->
   
 
   <!-- link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
   
@@ -27,11 +27,13 @@
   
 
   
-  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gyxiaoz/image-hosting@master/favicon.ico">
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/gyxiaoz/image-hosting@master/favicon.ico">
   
 
   
-    <link rel="stylesheet" href="/style.css">
+    
+<link rel="stylesheet" href="/style.css">
+
   
 
   <script>
@@ -42,7 +44,7 @@
 
   
   
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
   
@@ -288,7 +290,7 @@
       
         <i class="fas fa-user" aria-hidden="true"></i>
       
-      <p>zzx</p>
+      <p>xiaOz</p>
     </a>
   </div>
 
@@ -388,7 +390,7 @@
       
         <i class="fas fa-user" aria-hidden="true"></i>
       
-      <p>zzx</p>
+      <p>xiaOz</p>
     </a>
   </div>
 
@@ -438,14 +440,16 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p><img src="https://cdn.nlark.com/yuque/0/2019/png/103147/1557142220425-364dee55-ce15-4c83-98d1-8e1ec9ada26e.png#align=left&amp;display=inline&amp;height=540&amp;name=image.png&amp;originHeight=1080&amp;originWidth=1920&amp;size=141753&amp;status=done&amp;width=960" alt="image.png"></p>
+      <p><img src="https://cdn.nlark.com/yuque/0/2019/png/103147/1557142220425-364dee55-ce15-4c83-98d1-8e1ec9ada26e.png#align=left&display=inline&height=540&name=image.png&originHeight=1080&originWidth=1920&size=141753&status=done&width=960" alt="image.png"></p>
 <blockquote>
 <p>直播回放链接：<a href="https://yq.aliyun.com/articles/700174" target="_blank" rel="noopener">云栖社区</a> (<a href="https://github.com/x-cold" target="_blank" rel="noopener">@x-cold</a>)</p>
 </blockquote>
 <p><a name="4wRfh"></a></p>
 <h2 id="React-Hooks-是什么？"><a href="#React-Hooks-是什么？" class="headerlink" title="React Hooks 是什么？"></a>React Hooks 是什么？</h2><p>Hooks 顾名思义，字面意义上来说就是 React 钩子的概念。通过一个 case 我们对 React Hooks 先有一个第一印象。</p>
 <p>假设现在要实现一个计数器的组件。如果使用组件化的方式，我们需要做的事情相对更多一些，比如说声明 state，编写计数器的方法等，而且需要理解的概念可能更多一些，比如 Javascript 的类的概念，this 上下文的指向等。</p>
-<p><a href="https://codepen.io/x-cold/pen/JqjZKR" target="_blank" rel="noopener">示例</a><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">  	count: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  countUp = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: count + <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  countDown = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: count - <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.countUp&#125;&gt;+<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">        &lt;h1&gt;&#123;count&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;this.countDown&#125;&gt;-&lt;/</span>button&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;Counter /</span>&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://codepen.io/x-cold/pen/JqjZKR" target="_blank" rel="noopener">示例</a></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">  	count: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  countUp = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: count + <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  countDown = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: count - <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.countUp&#125;&gt;+<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">        &lt;h1&gt;&#123;count&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;this.countDown&#125;&gt;-&lt;/</span>button&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;Counter /</span>&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure>
+
 <p>使用 React Hooks，我们可以这么写。</p>
       
         <div class="readmore">
@@ -500,7 +504,7 @@
       
         <i class="fas fa-user" aria-hidden="true"></i>
       
-      <p>zzx</p>
+      <p>xiaOz</p>
     </a>
   </div>
 
@@ -552,6 +556,7 @@
     <div class="article-entry" itemprop="articleBody">
       <h2 id="配置ssh-server"><a href="#配置ssh-server" class="headerlink" title="配置ssh server"></a>配置ssh server</h2><p>自带的ssh server不好用（好不好用不知道，反正网上的教程都是这么说的），先卸载再安装即可。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 卸载</span><br><span class="line">sudo apt-get remove openssh-server</span><br><span class="line">// 安装</span><br><span class="line">sudo apt-get install openssh-server</span><br><span class="line">// 编辑配置文件</span><br><span class="line">// vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">    Port 22222  <span class="comment"># 默认的是22，但是windows有自己的ssh服务用的也是22端口，修改一下</span></span><br><span class="line">    PubkeyAuthentication yes</span><br><span class="line">    PermitRootLogin prohibit-password</span><br><span class="line"></span><br><span class="line">// 重启ssh服务</span><br><span class="line">sudo service ssh --full-restart</span><br></pre></td></tr></table></figure>
+
 <h2 id="生成公钥秘钥"><a href="#生成公钥秘钥" class="headerlink" title="生成公钥秘钥"></a>生成公钥秘钥</h2><p><code>xshell</code> &gt; <code>工具</code> &gt;  <code>新建用户秘钥生成向导</code> &gt; 下一步，具体如图。</p>
 <ol>
 <li>第一步<br><img src="http://img.xiaoz.site/20190517135954.png" alt="img-20190517135954"></li>
@@ -743,11 +748,11 @@
         
           <li><a class="flat-box" title="/categories/work/" href="/categories/work/"><div class='name'>work</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/学习笔记/" href="/categories/学习笔记/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box child" title="/categories/学习笔记/typescript/" href="/categories/学习笔记/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
+          <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/文档/" href="/categories/文档/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -879,7 +884,7 @@
     </div>
   
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
     本站使用
@@ -961,10 +966,14 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/app.js"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.19/js/search.js"></script>
+
 
 
 
