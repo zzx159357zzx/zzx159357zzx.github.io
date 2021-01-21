@@ -253,9 +253,221 @@
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/01/21/commander/">
+      Commander.js
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-01-21</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p><a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">Commander.js</a> 是用来搞 node.js 命令行的，现在通过一个简单的例子来学习如何使用 Commander.js</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹</p>
+<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><ul>
+<li><input disabled="" type="checkbox"> 可以根据参数批量创建文件</li>
+<li><input disabled="" type="checkbox"> 利用 <code>Inquirer.js</code> ，实现交互式命令行</li>
+</ul>
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>既然是用于创建文件的，那我们就叫做 <code>mkf-cli</code> 吧，在你的命令行工具依次执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir mkf-cli</span><br><span class="line"><span class="built_in">cd</span> mkf-cli</span><br><span class="line">yarn init -y</span><br></pre></td></tr></table></figure>
+
+<p>编辑器打开项目后，新建<code>index.js</code>文件作为我们的入口文件，文件第一行添加以下代码，意思是告诉工具已 node 来处理该文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env node</span><br></pre></td></tr></table></figure>
+
+<p>在<code>package.json</code>中添加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;bin&quot;: &quot;index.js&quot;</span><br></pre></td></tr></table></figure>
+
+<p>更新中…</p>
+<h3 id="关于-window-平台-powershell-出现以下问题解决方案"><a href="#关于-window-平台-powershell-出现以下问题解决方案" class="headerlink" title="关于 window 平台 powershell 出现以下问题解决方案"></a>关于 window 平台 powershell 出现以下问题解决方案</h3><p>问题：<code>Suggestion [3,General]: 找不到命令 xxx，但它确实存在于当前位置。默认情况下，Windows PowerShell 不会从当前位置加载命令。如果信任此命令，请改为键入“.\xxx”。有关详细信息，请参阅 &quot;get-help about_Command_Precedence&quot;。</code></p>
+<p>解决：管理员打开 powershell 执行 <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code> <a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1" target="_blank" rel="noopener">参考</a></p>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
+      深浅拷贝
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-01-21</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>面试</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><h3 id="1-Object-assign"><a href="#1-Object-assign" class="headerlink" title="1. Object.assign"></a>1. Object.assign</h3><ul>
+<li>它不会拷贝对象的继承属性；</li>
+<li>它不会拷贝对象的不可枚举的属性；</li>
+<li>可以拷贝 Symbol 类型的属性。</li>
+</ul>
+<h3 id="2-扩展运算符-…"><a href="#2-扩展运算符-…" class="headerlink" title="2.扩展运算符 …"></a>2.扩展运算符 …</h3><p>和 Object.assign 类似</p>
+      
+        <div class="readmore">
+          <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -471,115 +683,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
-      深浅拷贝
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2021-01-21</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>面试</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><h3 id="1-Object-assign"><a href="#1-Object-assign" class="headerlink" title="1. Object.assign"></a>1. Object.assign</h3><ul>
-<li>它不会拷贝对象的继承属性；</li>
-<li>它不会拷贝对象的不可枚举的属性；</li>
-<li>可以拷贝 Symbol 类型的属性。</li>
-</ul>
-<h3 id="2-扩展运算符-…"><a href="#2-扩展运算符-…" class="headerlink" title="2.扩展运算符 …"></a>2.扩展运算符 …</h3><p>和 Object.assign 类似</p>
-      
-        <div class="readmore">
-          <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -746,8 +849,6 @@
           <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(3)</div></a></li>
         

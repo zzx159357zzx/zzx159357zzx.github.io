@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: 文档 | xiaOz&#39;s blog</title>
+  <title>Commander.js | xiaOz&#39;s blog</title>
   
   <meta name="keywords" content="前端">
   
@@ -50,7 +50,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>xiaOz's blog</h1>
@@ -240,25 +240,12 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      
-<div class='l_main'>
+      <div class='l_main'>
   
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
+
   
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -267,11 +254,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2019/05/16/doc/ReactReduxInTypeScript/">
-      React & Redux in TypeScript
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2021/01/21/commander/">
+        Commander.js
+      </a>
+    </h1>
+  
 
 
       
@@ -297,7 +286,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-16</p>
+    <p>2021-01-21</p>
   </a>
 </div>
 
@@ -305,19 +294,24 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%96%87%E6%A1%A3/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>文档</p>
-    </a>
-  </div>
-
 
           
         
           
             
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
 
           
         
@@ -334,46 +328,169 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>React &amp; Redux 配合 TypeScript 使用指南，想翻译来着，今年年底前一定给他弄了💪</p>
-      
-        <div class="readmore">
-          <a href="/2019/05/16/doc/ReactReduxInTypeScript/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <p><a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">Commander.js</a> 是用来搞 node.js 命令行的，现在通过一个简单的例子来学习如何使用 Commander.js</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹</p>
+<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><ul>
+<li><input disabled="" type="checkbox"> 可以根据参数批量创建文件</li>
+<li><input disabled="" type="checkbox"> 利用 <code>Inquirer.js</code> ，实现交互式命令行</li>
+</ul>
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>既然是用于创建文件的，那我们就叫做 <code>mkf-cli</code> 吧，在你的命令行工具依次执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir mkf-cli</span><br><span class="line"><span class="built_in">cd</span> mkf-cli</span><br><span class="line">yarn init -y</span><br></pre></td></tr></table></figure>
+
+<p>编辑器打开项目后，新建<code>index.js</code>文件作为我们的入口文件，文件第一行添加以下代码，意思是告诉工具已 node 来处理该文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env node</span><br></pre></td></tr></table></figure>
+
+<p>在<code>package.json</code>中添加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;bin&quot;: &quot;index.js&quot;</span><br></pre></td></tr></table></figure>
+
+<p>更新中…</p>
+<h3 id="关于-window-平台-powershell-出现以下问题解决方案"><a href="#关于-window-平台-powershell-出现以下问题解决方案" class="headerlink" title="关于 window 平台 powershell 出现以下问题解决方案"></a>关于 window 平台 powershell 出现以下问题解决方案</h3><p>问题：<code>Suggestion [3,General]: 找不到命令 xxx，但它确实存在于当前位置。默认情况下，Windows PowerShell 不会从当前位置加载命令。如果信任此命令，请改为键入“.\xxx”。有关详细信息，请参阅 &quot;get-help about_Command_Precedence&quot;。</code></p>
+<p>解决：管理员打开 powershell 执行 <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code> <a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1" target="_blank" rel="noopener">参考</a></p>
+
         </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-21T10:26:45+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2021年1月21日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>typescript</a>
-        
-          <a href="/tags/react/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>react</a>
-        
-      </div>
-    
   </section>
-</article>
 
-          </div>
+
         
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="prev" title="深浅拷贝">
+                                    
+                                        深浅拷贝
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/js/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>js</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Commander.js',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -439,6 +556,20 @@
           
           
             
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#todo"><span class="toc-text">todo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化项目"><span class="toc-text">初始化项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于-window-平台-powershell-出现以下问题解决方案"><span class="toc-text">关于 window 平台 powershell 出现以下问题解决方案</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
           
         
@@ -529,8 +660,6 @@
           <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(3)</div></a></li>
         
@@ -741,6 +870,23 @@
 
 
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "b47f7f87ab36b5710ada",
+      clientSecret: "6505e07454b9a8a14369a514bf78ea33c69dba95",
+      repo: "zzx-blog-source",
+      owner: "GYxiaOZ",
+      admin: "GYxiaOZ",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
 
 
 

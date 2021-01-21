@@ -1042,112 +1042,6 @@
       
         
   <h2 class="title">
-    <a href="/2019/05/16/doc/ReactReduxInTypeScript/">
-      React & Redux in TypeScript
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-16</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%96%87%E6%A1%A3/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>文档</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>React &amp; Redux 配合 TypeScript 使用指南，想翻译来着，今年年底前一定给他弄了💪</p>
-      
-        <div class="readmore">
-          <a href="/2019/05/16/doc/ReactReduxInTypeScript/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>typescript</a>
-        
-          <a href="/tags/react/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>react</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
     <a href="/2019/05/12/learn-ts4/">
       typescript学习(4) 函数
     </a>
@@ -1330,6 +1224,114 @@
       
         <div class="readmore">
           <a href="/2019/05/11/learn-ts3/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>typescript</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/05/09/learn-ts2/">
+      typescript学习(2) 接口
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>学习笔记&nbsp;/&nbsp;typescript</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><p>TypeScript 的核心原则之一是对值所具有的结构进行类型检查，接口就是对解构的一种描述</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Square &#123;</span><br><span class="line">  color: <span class="built_in">string</span>,</span><br><span class="line">  area?: <span class="built_in">number</span> <span class="comment">// 可选</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h2><p>在属性名前用 readonly 来指定只读属性</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Point &#123;</span><br><span class="line">  readonly x: <span class="built_in">number</span></span><br><span class="line">  readonly y: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1: Point = &#123; x: <span class="number">10</span>, y: <span class="number">20</span> &#125;</span><br><span class="line">p1.x = <span class="number">5</span> <span class="comment">// error!</span></span><br></pre></td></tr></table></figure>
+      
+        <div class="readmore">
+          <a href="/2019/05/09/learn-ts2/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -1533,8 +1535,6 @@
           <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(3)</div></a></li>
         

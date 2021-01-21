@@ -196,8 +196,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/05/16/doc/ReactReduxInTypeScript/">
-      React & Redux in TypeScript
+    <a href="/2019/05/16/learn-ts5/">
+      typescript学习(5) 泛型
     </a>
   </h2>
 
@@ -235,9 +235,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E6%96%87%E6%A1%A3/' rel="nofollow">
+    <a href='/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>文档</p>
+      <p>学习笔记&nbsp;/&nbsp;typescript</p>
     </a>
   </div>
 
@@ -264,10 +264,15 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>React &amp; Redux 配合 TypeScript 使用指南，想翻译来着，今年年底前一定给他弄了💪</p>
+      <p>泛型为定义提供了重用性，在创建大型系统时为你提供了十分灵活的功能</p>
+<h2 id="基础实例"><a href="#基础实例" class="headerlink" title="基础实例"></a>基础实例</h2><p>创建一个 <code>identity</code> 函数，它会返回任何传入值，如果不用泛型</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>(<span class="params">arg: <span class="built_in">any</span></span>): <span class="title">any</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是使用 <code>any</code> 会导致 ts 不提供类型检查，我们需要知道传入类型和返回类型是相同的，所以需要使用泛型，泛型是一种 <em>类型变量</em> ，它值用于表示类型而不是值</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
         <div class="readmore">
-          <a href="/2019/05/16/doc/ReactReduxInTypeScript/" class="flat-box">
+          <a href="/2019/05/16/learn-ts5/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -278,8 +283,6 @@
       <div class="full-width auto-padding tags">
         
           <a href="/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>typescript</a>
-        
-          <a href="/tags/react/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>react</a>
         
       </div>
     
@@ -1115,8 +1118,6 @@
           <li><a class="flat-box" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><div class='name'>学习笔记</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box" title="/categories/%E6%96%87%E6%A1%A3/" href="/categories/%E6%96%87%E6%A1%A3/"><div class='name'>文档</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(3)</div></a></li>
         
