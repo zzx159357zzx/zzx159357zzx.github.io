@@ -280,9 +280,333 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/02/18/interview/8.%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">
+      8.异步编程
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-02-18</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>面试</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>异步编程是 js 中很重要的一个部分，常用的有以下几种：回调函数、事件监听、Promise、Generator、async/await</p>
+<h2 id="同步与异步"><a href="#同步与异步" class="headerlink" title="同步与异步"></a>同步与异步</h2><p>js 是单线程的，同步代码在前面某段代码执行结束前，其他代码是会被阻塞的，而异步不会被阻塞</p>
+<h2 id="异步编程的发展"><a href="#异步编程的发展" class="headerlink" title="异步编程的发展"></a>异步编程的发展</h2><h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>直接看例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fun1(<span class="function">(<span class="params">a</span>) =&gt;</span> &#123;</span><br><span class="line">  fun2(a, (b) =&gt; &#123;</span><br><span class="line">    fun3(b, (c) =&gt; &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>回调函数简单，但是层级深了就会成为回调地狱</p>
+      
+        <div class="readmore">
+          <a href="/2021/02/18/interview/8.%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/02/04/interview/7.%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F/">
+      7.数组排序
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-02-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>面试</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/02/01/interview/6.%E6%95%B0%E7%BB%84api/">
+      6.数组api
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-02-01</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>面试</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>数组是日常使用中非常多的，我们来复习数组的各种 api</p>
+<h2 id="数组构造器"><a href="#数组构造器" class="headerlink" title="数组构造器"></a>数组构造器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 Array 构造器，可以自定义长度</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">Array</span>(<span class="number">6</span>); <span class="comment">// [empty × 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用对象字面量</span></span><br><span class="line"><span class="keyword">var</span> b = [];</span><br><span class="line">b.length = <span class="number">6</span>; <span class="comment">// [undefined × 6]</span></span><br></pre></td></tr></table></figure>
+
+<p>new Array(arg1, arg2,…) 参数长度为 0 或长度大于等于 2 时，传入的参数将按照顺序依次成为新数组的第 0 至第 N 项（参数长度为 0 时，返回空数组）;参数长度为 1 且是数字时，返回 length 为参入数值的数组</p>
+<p>容易造成误会，所以尽量不要用</p>
+      
+        <div class="readmore">
+          <a href="/2021/02/01/interview/6.%E6%95%B0%E7%BB%84api/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -358,24 +682,22 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       <p><a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">Commander.js</a> 是用来搞 node.js 命令行的，现在通过一个简单的例子来学习如何使用 Commander.js</p>
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹</p>
-<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><ul>
-<li><input disabled="" type="checkbox"> 可以根据参数批量创建文件</li>
-<li><input disabled="" type="checkbox"> 利用 <code>Inquirer.js</code> ，实现交互式命令行</li>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的用于 windows 创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹</p>
+<h2 id="想要实现的最终效果"><a href="#想要实现的最终效果" class="headerlink" title="想要实现的最终效果"></a>想要实现的最终效果</h2><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="mk-dir-path"><a href="#mk-dir-path" class="headerlink" title="mk dir [path]"></a><code>mk dir [path]</code></h3><h3 id="mk-file-path"><a href="#mk-file-path" class="headerlink" title="mk file [path]"></a><code>mk file [path]</code></h3><p><code>path</code> 文件或目录名</p>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><p><code>-n, --number &lt;number&gt;</code> 数量，如果传入则会创建形如 x0,x1,x2… 的文件或目录</p>
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>需要用到的库：</p>
+<ul>
+<li><a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">commander</a>：创建命令行</li>
+<li><a href="https://github.com/chalk/chalk" target="_blank" rel="noopener">chalk</a>：给命令行加颜色</li>
+<li><a href="https://github.com/SBoudrias/Inquirer.js" target="_blank" rel="noopener">inquirer</a>：交互式命令行</li>
 </ul>
-<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>既然是用于创建文件的，那我们就叫做 <code>mkf-cli</code> 吧，在你的命令行工具依次执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir mkf-cli</span><br><span class="line"><span class="built_in">cd</span> mkf-cli</span><br><span class="line">yarn init -y</span><br></pre></td></tr></table></figure>
-
-<p>编辑器打开项目后，新建<code>index.js</code>文件作为我们的入口文件，文件第一行添加以下代码，意思是告诉工具已 node 来处理该文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env node</span><br></pre></td></tr></table></figure>
-
-<p>在<code>package.json</code>中添加以下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;bin&quot;: &quot;index.js&quot;</span><br></pre></td></tr></table></figure>
-
-<p>更新中…</p>
-<h3 id="关于-window-平台-powershell-出现以下问题解决方案"><a href="#关于-window-平台-powershell-出现以下问题解决方案" class="headerlink" title="关于 window 平台 powershell 出现以下问题解决方案"></a>关于 window 平台 powershell 出现以下问题解决方案</h3><p>问题：<code>Suggestion [3,General]: 找不到命令 xxx，但它确实存在于当前位置。默认情况下，Windows PowerShell 不会从当前位置加载命令。如果信任此命令，请改为键入“.\xxx”。有关详细信息，请参阅 &quot;get-help about_Command_Precedence&quot;。</code></p>
-<p>解决：管理员打开 powershell 执行 <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code> <a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1" target="_blank" rel="noopener">参考</a></p>
-
+      
+        <div class="readmore">
+          <a href="/2021/01/21/commander/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
       
     </div>
     
@@ -398,7 +720,335 @@
       
         
   <h2 class="title">
-    <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
+    <a href="/2021/01/20/interview/5.%E9%97%AD%E5%8C%85/">
+      5.闭包
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-01-20</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>面试</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>JavaScript 中的闭包是相当重要的概念，也是面试经常问到的点，这一篇我们来把它搞清楚</p>
+<h2 id="关于作用域"><a href="#关于作用域" class="headerlink" title="关于作用域"></a>关于作用域</h2><p>作用域简单说就是变量能访问到的范围，ES5 之前只有全局作用域和函数作用域两种。ES6 出现之后，又新增了块级作用域</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包其实就是一个可以访问其他函数内部变量的函数。看一个例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun1();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = fun1();</span><br><span class="line"></span><br><span class="line">result(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+      
+        <div class="readmore">
+          <a href="/2021/01/20/interview/5.%E9%97%AD%E5%8C%85/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/01/15/interview/4.new%E3%80%81apply%E3%80%81call%E3%80%81bind/">
+      4.new、apply、call、bind
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-01-15</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>面试</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>这几个玩意都和 this 有关，经常搞不清楚，这一篇来分析它们的区别和实现</p>
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><p>new 关键词的主要作用就是执行一个构造函数、返回一个实例对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'Jack'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.name); <span class="comment">// Jack</span></span><br></pre></td></tr></table></figure>
+
+<p>new 在上面过程中执行了那些操作？</p>
+<ol>
+<li>创建一个新对象；</li>
+<li>将构造函数的作用域赋给新对象（this 指向新对象）；</li>
+<li>执行构造函数中的代码（为这个新对象添加属性）；</li>
+<li>返回新对象。</li>
+</ol>
+      
+        <div class="readmore">
+          <a href="/2021/01/15/interview/4.new%E3%80%81apply%E3%80%81call%E3%80%81bind/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/01/12/interview/3.%E7%BB%A7%E6%89%BF/">
+      继承
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://blog.xiaoz.site" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xiaOz</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-01-12</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>面试</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent1'</span>;</span><br><span class="line">  <span class="keyword">this</span>.play = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child2'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child1.prototype = <span class="keyword">new</span> Parent1();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Child1());</span><br></pre></td></tr></table></figure>
+
+<p>问题：两个实例属性是引用对象时，一个发生变化，另一个也会变化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Child1();</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="keyword">new</span> Child1();</span><br><span class="line"></span><br><span class="line">s1.play.push(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(s1.play, s2.play);</span><br><span class="line"><span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"><span class="comment">// [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+      
+        <div class="readmore">
+          <a href="/2021/01/12/interview/3.%E7%BB%A7%E6%89%BF/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/01/11/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
       深浅拷贝
     </a>
   </h2>
@@ -427,7 +1077,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2021-01-21</p>
+    <p>2021-01-11</p>
   </a>
 </div>
 
@@ -474,7 +1124,7 @@
 <h3 id="2-扩展运算符-…"><a href="#2-扩展运算符-…" class="headerlink" title="2.扩展运算符 …"></a>2.扩展运算符 …</h3><p>和 Object.assign 类似</p>
       
         <div class="readmore">
-          <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="flat-box">
+          <a href="/2021/01/11/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -507,7 +1157,7 @@
       
         
   <h2 class="title">
-    <a href="/2021/01/21/interview/1.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+    <a href="/2021/01/10/interview/1.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
       数据类型
     </a>
   </h2>
@@ -536,7 +1186,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2021-01-21</p>
+    <p>2021-01-10</p>
   </a>
 </div>
 
@@ -584,111 +1234,7 @@
 <p>引用类型除了function其他都会输出 object</p>
       
         <div class="readmore">
-          <a href="/2021/01/21/interview/1.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>js</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2021/01/21/interview/3.%E7%BB%A7%E6%89%BF/">
-      继承
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2021-01-21</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E9%9D%A2%E8%AF%95/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>面试</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">"parent1"</span>;</span><br><span class="line">  <span class="keyword">this</span>.play = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">"child2"</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child1.prototype = <span class="keyword">new</span> Parent1();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Child1());</span><br></pre></td></tr></table></figure>
-      
-        <div class="readmore">
-          <a href="/2021/01/21/interview/3.%E7%BB%A7%E6%89%BF/" class="flat-box">
+          <a href="/2021/01/10/interview/1.%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -808,555 +1354,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/06/04/react-hook/">
-      深入浅出 React Hooks
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-06-04</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/learn/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>learn</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p><img src="https://cdn.nlark.com/yuque/0/2019/png/103147/1557142220425-364dee55-ce15-4c83-98d1-8e1ec9ada26e.png#align=left&display=inline&height=540&name=image.png&originHeight=1080&originWidth=1920&size=141753&status=done&width=960" alt="image.png"></p>
-<blockquote>
-<p>直播回放链接：<a href="https://yq.aliyun.com/articles/700174" target="_blank" rel="noopener">云栖社区</a> (<a href="https://github.com/x-cold" target="_blank" rel="noopener">@x-cold</a>)</p>
-</blockquote>
-<p><a name="4wRfh"></a></p>
-<h2 id="React-Hooks-是什么？"><a href="#React-Hooks-是什么？" class="headerlink" title="React Hooks 是什么？"></a>React Hooks 是什么？</h2><p>Hooks 顾名思义，字面意义上来说就是 React 钩子的概念。通过一个 case 我们对 React Hooks 先有一个第一印象。</p>
-<p>假设现在要实现一个计数器的组件。如果使用组件化的方式，我们需要做的事情相对更多一些，比如说声明 state，编写计数器的方法等，而且需要理解的概念可能更多一些，比如 Javascript 的类的概念，this 上下文的指向等。</p>
-<p><a href="https://codepen.io/x-cold/pen/JqjZKR" target="_blank" rel="noopener">示例</a></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">  	count: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  countUp = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: count + <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  countDown = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">this</span>.setState(&#123; <span class="attr">count</span>: count - <span class="number">1</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; count &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">  	<span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.countUp&#125;&gt;+&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h1&gt;&#123;count&#125;&lt;/</span>h1&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.countDown&#125;&gt;-&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Counter</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure>
-
-<p>使用 React Hooks，我们可以这么写。</p>
-      
-        <div class="readmore">
-          <a href="/2019/06/04/react-hook/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/react/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>react</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/18/learn-ts7/">
-      typescript学习(7) 高级类型
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-18</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>学习笔记&nbsp;/&nbsp;typescript</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="交叉类型"><a href="#交叉类型" class="headerlink" title="交叉类型"></a>交叉类型</h2><p>将多个类型合并为一个类型，<code>Man &amp; Student</code> 说明这个类型同时拥有 <code>Man</code> 和 <code>Student</code> 类型的成员</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Man = &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">type</span> Student = &#123;</span><br><span class="line">  grade: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">type</span> Jack = Man &amp; Student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> jack: Jack = &#123;</span><br><span class="line">  name: <span class="string">'jack'</span>,</span><br><span class="line">  grade: <span class="number">5</span> <span class="comment">// 如果缺少其中一个成员会报错</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>有时候交叉类型不能交叉一些基本类型，如 <code>string &amp; boolean</code> 一个值不可能既是 <code>string</code> 也是 <code>boolean</code>，会被推断成 never 或只能赋值为 <code>undefined</code> 或 <code>null</code></p>
-      
-        <div class="readmore">
-          <a href="/2019/05/18/learn-ts7/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>typescript</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/18/learn-ts6/">
-      typescript学习(6) 类型推断
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-18</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>学习笔记&nbsp;/&nbsp;typescript</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>TypeScript 里，在有些没有明确指出类型的地方，类型推断会帮助提供类型。如下面的例子：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<p>变量 <code>x</code> 的类型被推断为 <code>number</code> 。这种推断发生在初始化变量和成员，设置默认参数值和决定函数返回值时。</p>
-<h2 id="最佳通用类型"><a href="#最佳通用类型" class="headerlink" title="最佳通用类型"></a>最佳通用类型</h2><p>有些时候我们需要从几个表达式中推断类型，会使用这些表达式的类型来推断出一个最合适的通用类型。例如，</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = [<span class="number">0</span>, <span class="number">1</span>, <span class="literal">null</span>];</span><br></pre></td></tr></table></figure>
-
-<p>为了推断 <code>x</code> 的类型，我们必须考虑所有元素的类型。 这里有两种选择：<code>number</code> 和 <code>null</code>。 计算通用类型算法会考虑所有的候选类型，并给出一个兼容所有候选类型的类型。</p>
-<p>由于最终的通用类型取自候选类型，有些时候候选类型共享一个公共结构，但是却没有一个类型能做为所有候选类型的超级类型。例如：</p>
-      
-        <div class="readmore">
-          <a href="/2019/05/18/learn-ts6/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>typescript</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/17/wslssh/">
-      WSL 通过SSH登录
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-17</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/learn/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>learn</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="配置ssh-server"><a href="#配置ssh-server" class="headerlink" title="配置ssh server"></a>配置ssh server</h2><p>自带的ssh server不好用（好不好用不知道，反正网上的教程都是这么说的），先卸载再安装即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 卸载</span><br><span class="line">sudo apt-get remove openssh-server</span><br><span class="line">// 安装</span><br><span class="line">sudo apt-get install openssh-server</span><br><span class="line">// 编辑配置文件</span><br><span class="line">// vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">    Port 22222  <span class="comment"># 默认的是22，但是windows有自己的ssh服务用的也是22端口，修改一下</span></span><br><span class="line">    PubkeyAuthentication yes</span><br><span class="line">    PermitRootLogin prohibit-password</span><br><span class="line"></span><br><span class="line">// 重启ssh服务</span><br><span class="line">sudo service ssh --full-restart</span><br></pre></td></tr></table></figure>
-
-<h2 id="生成公钥秘钥"><a href="#生成公钥秘钥" class="headerlink" title="生成公钥秘钥"></a>生成公钥秘钥</h2><p><code>xshell</code> &gt; <code>工具</code> &gt;  <code>新建用户秘钥生成向导</code> &gt; 下一步，具体如图。</p>
-<ol>
-<li>第一步<br><img src="http://img.xiaoz.site/20190517135954.png" alt="img-20190517135954"></li>
-</ol>
-      
-        <div class="readmore">
-          <a href="/2019/05/17/wslssh/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/tips/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>tips</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/17/doc/eslintDisable/">
-      eslint 禁用规则
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://blog.xiaoz.site" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>xiaOz</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-17</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/work/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>work</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="块禁用"><a href="#块禁用" class="headerlink" title="块禁用"></a>块禁用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* eslint-disable */</span></span><br><span class="line">alert(<span class="string">'foo'</span>);</span><br><span class="line"><span class="comment">/* eslint-enable */</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="块指定的规则禁用"><a href="#块指定的规则禁用" class="headerlink" title="块指定的规则禁用"></a>块指定的规则禁用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* eslint-disable no-alert, no-console */</span></span><br><span class="line">alert(<span class="string">'foo'</span>);<span class="built_in">console</span>.log(<span class="string">'bar'</span>);</span><br><span class="line"><span class="comment">/* eslint-enable no-alert, no-console */</span></span><br></pre></td></tr></table></figure>
-      
-        <div class="readmore">
-          <a href="/2019/05/17/doc/eslintDisable/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/tips/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>tips</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1366,7 +1363,7 @@
         <div class="prev-next">
           
           <p class="current">
-            1 / 2
+            1 / 3
           </p>
           
             <a class="next" rel="next" href="/page/2/">
@@ -1541,7 +1538,7 @@
         
           <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(8)</div></a></li>
         
       </ul>
     </div>
@@ -1572,7 +1569,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/js/" style="font-size: 17.33px; color: #828282">js</a> <a href="/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/tags/tips/" style="font-size: 20.67px; color: #6c6c6c">tips</a> <a href="/tags/typescript/" style="font-size: 24px; color: #555">typescript</a>
+      <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/tags/tips/" style="font-size: 17.33px; color: #828282">tips</a> <a href="/tags/typescript/" style="font-size: 20.67px; color: #6c6c6c">typescript</a>
     </div>
   </section>
 

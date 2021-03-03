@@ -331,23 +331,30 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           <p><a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">Commander.js</a> 是用来搞 node.js 命令行的，现在通过一个简单的例子来学习如何使用 Commander.js</p>
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹</p>
-<h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><ul>
-<li><input disabled="" type="checkbox"> 可以根据参数批量创建文件</li>
-<li><input disabled="" type="checkbox"> 利用 <code>Inquirer.js</code> ，实现交互式命令行</li>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的用于 windows 创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹</p>
+<h2 id="想要实现的最终效果"><a href="#想要实现的最终效果" class="headerlink" title="想要实现的最终效果"></a>想要实现的最终效果</h2><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="mk-dir-path"><a href="#mk-dir-path" class="headerlink" title="mk dir [path]"></a><code>mk dir [path]</code></h3><h3 id="mk-file-path"><a href="#mk-file-path" class="headerlink" title="mk file [path]"></a><code>mk file [path]</code></h3><p><code>path</code> 文件或目录名</p>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><p><code>-n, --number &lt;number&gt;</code> 数量，如果传入则会创建形如 x0,x1,x2… 的文件或目录</p>
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>需要用到的库：</p>
+<ul>
+<li><a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">commander</a>：创建命令行</li>
+<li><a href="https://github.com/chalk/chalk" target="_blank" rel="noopener">chalk</a>：给命令行加颜色</li>
+<li><a href="https://github.com/SBoudrias/Inquirer.js" target="_blank" rel="noopener">inquirer</a>：交互式命令行</li>
 </ul>
-<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><p>既然是用于创建文件的，那我们就叫做 <code>mkf-cli</code> 吧，在你的命令行工具依次执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir mkf-cli</span><br><span class="line"><span class="built_in">cd</span> mkf-cli</span><br><span class="line">yarn init -y</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
-<p>编辑器打开项目后，新建<code>index.js</code>文件作为我们的入口文件，文件第一行添加以下代码，意思是告诉工具已 node 来处理该文件</p>
+<p>既然是用于创建文件的，那我们就叫做 <code>mk-cli</code> 吧，在你的命令行工具依次执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir mk-cli</span><br><span class="line"><span class="built_in">cd</span> mk-cli</span><br><span class="line">yarn init -y</span><br><span class="line">yarn add commander chalk inquirer</span><br></pre></td></tr></table></figure>
+
+<p>编辑器打开项目后，新建<code>index.js</code>文件作为我们的入口文件，文件第一行添加以下代码，意思是告诉工具以 node 来处理该文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env node</span><br></pre></td></tr></table></figure>
 
-<p>在<code>package.json</code>中添加以下代码</p>
+<p>在<code>package.json</code>中添加以下代码，表示可执行的文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;bin&quot;: &quot;index.js&quot;</span><br></pre></td></tr></table></figure>
 
 <p>更新中…</p>
-<h3 id="关于-window-平台-powershell-出现以下问题解决方案"><a href="#关于-window-平台-powershell-出现以下问题解决方案" class="headerlink" title="关于 window 平台 powershell 出现以下问题解决方案"></a>关于 window 平台 powershell 出现以下问题解决方案</h3><p>问题：<code>Suggestion [3,General]: 找不到命令 xxx，但它确实存在于当前位置。默认情况下，Windows PowerShell 不会从当前位置加载命令。如果信任此命令，请改为键入“.\xxx”。有关详细信息，请参阅 &quot;get-help about_Command_Precedence&quot;。</code></p>
+<h3 id="关于-window-平台-powershell-出现以下问题解决方案"><a href="#关于-window-平台-powershell-出现以下问题解决方案" class="headerlink" title="关于 window 平台 powershell 出现以下问题解决方案"></a>关于 window 平台 powershell 出现以下问题解决方案</h3><p>问题：<code>Suggestion [3,General]: 找不到命令 xxx，但它确实存在于当前位置。默认情况下，Windows PowerShell 不会从当前位置加载命令。如果信任此命令，请改为键入“.\xxx”。有关详细信息，请参阅 &quot;get-help about_Command_Precedence&quot;。</code>，可能是另一种错误提示，解决方法相同</p>
 <p>解决：管理员打开 powershell 执行 <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code> <a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1" target="_blank" rel="noopener">参考</a></p>
+<h3 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h3><p>暂时没得精力写教程，可以直接先看我写的代码 <a href="https://gitee.com/gyxiaoz/learn-commander" target="_blank" rel="noopener">learn-commander</a></p>
 
         </div>
         
@@ -359,10 +366,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-21T10:26:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-03T12:01:16+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2021年1月21日</p>
+    <p>最后更新于 2021年3月3日</p>
   </a>
 </div>
 
@@ -381,7 +388,16 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary=Commander.js 是用来搞 node.js 命令行的，现在通过一个简单的例子来学习如何使用 Commander.js
+需求做一个简单的用于 windows 创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹
+想要实现的最终效果命令mk dir [path]mk file [path]path 文件或目录名
+选项-n, --number &lt;number&gt; 数量，如果传入则会创建形如 x0,x1,x2… 的文件或目录
+初始化项目需要用到的库：
+
+commander：创建命令行
+chalk：给命令行加颜色
+inquirer：交互式命令行
+"
           
           >
           
@@ -393,7 +409,16 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary=Commander.js 是用来搞 node.js 命令行的，现在通过一个简单的例子来学习如何使用 Commander.js
+需求做一个简单的用于 windows 创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹
+想要实现的最终效果命令mk dir [path]mk file [path]path 文件或目录名
+选项-n, --number &lt;number&gt; 数量，如果传入则会创建形如 x0,x1,x2… 的文件或目录
+初始化项目需要用到的库：
+
+commander：创建命令行
+chalk：给命令行加颜色
+inquirer：交互式命令行
+"
           
           >
           
@@ -405,7 +430,16 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary="
+          href="http://service.weibo.com/share/share.php?url=https://blog.xiaoz.site/2021/01/21/commander/&title=Commander.js | xiaOz's blog&summary=Commander.js 是用来搞 node.js 命令行的，现在通过一个简单的例子来学习如何使用 Commander.js
+需求做一个简单的用于 windows 创建文件的命令行，输入个数、前缀和后缀，创建文件或文件夹
+想要实现的最终效果命令mk dir [path]mk file [path]path 文件或目录名
+选项-n, --number &lt;number&gt; 数量，如果传入则会创建形如 x0,x1,x2… 的文件或目录
+初始化项目需要用到的库：
+
+commander：创建命令行
+chalk：给命令行加颜色
+inquirer：交互式命令行
+"
           
           >
           
@@ -429,14 +463,33 @@
         
             <div class="prev-next">
                 
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2021/02/01/interview/6.%E6%95%B0%E7%BB%84api/" rel="prev" title="6.数组api">
+                                  
+                                      6.数组api
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/js/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>js</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2021/01/21/interview/2.%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="prev" title="深浅拷贝">
+                                <a href="/2021/01/20/interview/5.%E9%97%AD%E5%8C%85/" rel="prev" title="5.闭包">
                                     
-                                        深浅拷贝
+                                        5.闭包
                                     
                                 </a>
                             </h4>
@@ -566,7 +619,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#todo"><span class="toc-text">todo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化项目"><span class="toc-text">初始化项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于-window-平台-powershell-出现以下问题解决方案"><span class="toc-text">关于 window 平台 powershell 出现以下问题解决方案</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#想要实现的最终效果"><span class="toc-text">想要实现的最终效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mk-dir-path"><span class="toc-text">mk dir [path]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mk-file-path"><span class="toc-text">mk file [path]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选项"><span class="toc-text">选项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化项目"><span class="toc-text">初始化项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于-window-平台-powershell-出现以下问题解决方案"><span class="toc-text">关于 window 平台 powershell 出现以下问题解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#待更新"><span class="toc-text">待更新</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -661,7 +714,7 @@
         
           <li><a class="flat-box child" title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/typescript/"><div class='name'>typescript</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(3)</div></a></li>
+          <li><a class="flat-box" title="/categories/%E9%9D%A2%E8%AF%95/" href="/categories/%E9%9D%A2%E8%AF%95/"><div class='name'>面试</div><div class='badge'>(8)</div></a></li>
         
       </ul>
     </div>
@@ -692,7 +745,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/js/" style="font-size: 17.33px; color: #828282">js</a> <a href="/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/tags/tips/" style="font-size: 20.67px; color: #6c6c6c">tips</a> <a href="/tags/typescript/" style="font-size: 24px; color: #555">typescript</a>
+      <a href="/tags/js/" style="font-size: 24px; color: #555">js</a> <a href="/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/tags/tips/" style="font-size: 17.33px; color: #828282">tips</a> <a href="/tags/typescript/" style="font-size: 20.67px; color: #6c6c6c">typescript</a>
     </div>
   </section>
 
